@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #fdfaf3;
+  --card: #ffffff;
+  --primary: #2d5a27;
+  --accent: #b8860b;
+  --text: #1a1c1a;
+  --muted: #71717a;
+  --border: #e2e2e2;
+  --rule-bg: #f3f5f2;
+}
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, "Inter", sans-serif;
+  --font-display: "Georgia", "Times New Roman", serif;
+  --font-arabic: "Amiri", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-50: #f3f5f2;     /* var(--rule-bg) */
+  --color-brand-100: #e2e2e2;    /* var(--border) */
+  --color-brand-500: #b8860b;    /* var(--accent) */
+  --color-brand-600: #2d5a27;    /* var(--primary) */
+  --color-brand-700: #20411c;    /* dark primary */
+  --color-brand-900: #132711;    /* deep dark primary */
+}
+
+/* Custom animations and styling */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: "Georgia", Cambria, "Times New Roman", Times, serif !important;
+}
+
+/* Primary buttons & interactive tags */
+button, input, select, textarea {
+  font-family: var(--font-sans) !important;
+}
+
+/* Card titles & elegant typography */
+.font-display {
+  font-family: "Georgia", serif !important;
+}
+
+/* Card layout adjustments */
+.bg-white {
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+}
+
+.border-slate-200, .border-slate-100 {
+  border-color: var(--border) !important;
+}
+
+.bg-slate-50, .bg-slate-100/50, .bg-emerald-50\/40, .bg-emerald-50, .bg-emerald-50\/50, .bg-emerald-100\/50 {
+  background-color: var(--rule-bg) !important;
+}
+
+.text-slate-800, .text-slate-900, .text-slate-700 {
+  color: var(--text) !important;
+}
+
+.text-slate-500, .text-slate-400, .text-slate-600 {
+  color: var(--muted) !important;
+}
+
+/* Header colors */
+header {
+  background-color: var(--primary) !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+
+/* Overriding primary green tones with the Natural Tones green */
+.text-emerald-700, .text-[#047857], .text-emerald-800, .text-emerald-600 {
+  color: var(--primary) !important;
+}
+
+.bg-emerald-700, .bg-[#047857], .bg-emerald-800, .bg-emerald-600 {
+  background-color: var(--primary) !important;
+}
+
+.bg-emerald-900, .bg-[#064e3b] {
+  background-color: #1a3617 !important; /* darker base primary */
+}
+
+.hover\:bg-emerald-800:hover, .hover\:bg-emerald-800:focus, .bg-emerald-800 {
+  background-color: #20411c !important;
+}
+
+/* Overriding amber accents with the Natural Tones gold */
+.text-amber-700, .text-amber-900, .text-amber-600, .text-amber-800 {
+  color: var(--accent) !important;
+}
+
+.bg-amber-50 {
+  background-color: #fdf2e9 !important;
+  border-color: var(--accent) !important;
+}
+
+.border-amber-200 {
+  border-color: var(--accent) !important;
+}
+
+.text-yellow-400, .bg-yellow-400 {
+  color: var(--accent) !important;
+}
+
+.bg-yellow-400 {
+  background-color: var(--accent) !important;
+}
+
+/* Specific elements like verse-box from design requirements */
+.verse-box {
+  background: #fdf2e9 !important;
+  border-left: 4px solid var(--accent) !important;
+  padding: 1rem !important;
+  font-family: "Georgia", Cambria, serif !important;
+  margin-bottom: 1rem !important;
+  border-radius: 4px !important;
+}
+
+/* Rule steps and margins from design */
+.rule-step {
+  position: relative !important;
+  padding-left: 1.5rem !important;
+  border-left: 2px solid var(--primary) !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.rule-step::before {
+  content: '' !important;
+  position: absolute !important;
+  left: -7px !important;
+  top: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: var(--primary) !important;
+}
+
+.pie-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) 0% 45%, var(--accent) 45% 70%, #8fb38a 70% 85%, #d4e0d1 85% 100%) !important;
+  margin: 0 auto 1.5rem auto;
+  border: 8px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Styling Arabic verse layout */
+.arabic-text {
+  font-family: var(--font-arabic);
+  font-size: 1.35rem;
+  line-height: 2.25rem;
+}
+

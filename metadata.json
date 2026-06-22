@@ -1,0 +1,8 @@
+{
+  "name": "Waris Rahbiyyah",
+  "description": "Kalkulator dan pembelajaran ilmu faraidh berdasarkan Kitab Ar-Rahbiyyah dengan rule engine presisi, penyelesaian kasus khusus, modul edukasi interaktif, dan visualisasi distribusi waris.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
