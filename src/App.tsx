@@ -592,47 +592,79 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-xs font-semibold text-slate-600">Total Harta Kasar (Rp)</label>
-                    <input 
-                      type="number"
-                      value={assets}
-                      onChange={(e) => setAssets(Math.max(0, parseInt(e.target.value) || 0))}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-mono focus:border-emerald-600 outline-none transition"
-                    />
+                    <label className="text-xs font-semibold text-slate-600">Total Harta Kasar</label>
+                    <div className="relative flex items-center">
+                      <span className="absolute left-3.5 text-slate-400 font-semibold text-sm">Rp</span>
+                      <input 
+                        type="text"
+                        value={assets === 0 ? '' : assets.toLocaleString('id-ID')}
+                        onChange={(e) => {
+                          const cleanVal = e.target.value.replace(/\D/g, '');
+                          const parsed = parseInt(cleanVal, 10) || 0;
+                          setAssets(parsed);
+                        }}
+                        placeholder="0"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-mono focus:border-emerald-600 outline-none transition focus:bg-white focus:ring-2 focus:ring-emerald-50/50"
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-600">Hutang (Rp)</label>
-                      <input 
-                        type="number"
-                        value={debts}
-                        onChange={(e) => setDebts(Math.max(0, parseInt(e.target.value) || 0))}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-mono focus:border-emerald-600 outline-none transition"
-                      />
+                      <label className="text-xs font-semibold text-slate-600">Hutang</label>
+                      <div className="relative flex items-center">
+                        <span className="absolute left-3 text-slate-400 font-semibold text-xs">Rp</span>
+                        <input 
+                          type="text"
+                          value={debts === 0 ? '' : debts.toLocaleString('id-ID')}
+                          onChange={(e) => {
+                            const cleanVal = e.target.value.replace(/\D/g, '');
+                            const parsed = parseInt(cleanVal, 10) || 0;
+                            setDebts(parsed);
+                          }}
+                          placeholder="0"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs font-mono focus:border-emerald-600 outline-none transition focus:bg-white focus:ring-2 focus:ring-emerald-50/50"
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-600">Biaya Makam (Rp)</label>
-                      <input 
-                        type="number"
-                        value={funeralCosts}
-                        onChange={(e) => setFuneralCosts(Math.max(0, parseInt(e.target.value) || 0))}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-mono focus:border-emerald-600 outline-none transition"
-                      />
+                      <label className="text-xs font-semibold text-slate-600">Biaya Makam</label>
+                      <div className="relative flex items-center">
+                        <span className="absolute left-3 text-slate-400 font-semibold text-xs">Rp</span>
+                        <input 
+                          type="text"
+                          value={funeralCosts === 0 ? '' : funeralCosts.toLocaleString('id-ID')}
+                          onChange={(e) => {
+                            const cleanVal = e.target.value.replace(/\D/g, '');
+                            const parsed = parseInt(cleanVal, 10) || 0;
+                            setFuneralCosts(parsed);
+                          }}
+                          placeholder="0"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs font-mono focus:border-emerald-600 outline-none transition focus:bg-white focus:ring-2 focus:ring-emerald-50/50"
+                        />
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1">
                     <div className="flex justify-between items-center">
-                      <label className="text-xs font-semibold text-slate-600">Wasiat Pewaris (Rp)</label>
+                      <label className="text-xs font-semibold text-slate-600">Wasiat Pewaris</label>
                       <span className="text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full font-medium">Maks 1/3 Harta Bersih</span>
                     </div>
-                    <input 
-                      type="number"
-                      value={bequest}
-                      onChange={(e) => setBequest(Math.max(0, parseInt(e.target.value) || 0))}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-mono focus:border-emerald-600 outline-none transition"
-                    />
+                    <div className="relative flex items-center">
+                      <span className="absolute left-3.5 text-slate-400 font-semibold text-sm">Rp</span>
+                      <input 
+                        type="text"
+                        value={bequest === 0 ? '' : bequest.toLocaleString('id-ID')}
+                        onChange={(e) => {
+                          const cleanVal = e.target.value.replace(/\D/g, '');
+                          const parsed = parseInt(cleanVal, 10) || 0;
+                          setBequest(parsed);
+                        }}
+                        placeholder="0"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-mono focus:border-emerald-600 outline-none transition focus:bg-white focus:ring-2 focus:ring-emerald-50/50"
+                      />
+                    </div>
                   </div>
                 </div>
 
